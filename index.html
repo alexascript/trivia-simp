@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simpsons Trivia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1 class="main-title">Simpsons Trivia</h1>
+    <section>
+      <article class="question-image">
+        <img
+          class="simpson-family"
+          src="Assets/Pictures/Simpsons family.jpeg"
+          alt=""
+        />
+      </article>
+      <article>
+        <form action="game.html">
+          <div id="player-name-container">
+            <label id="player-name" for="playerName">Nombre del jugador</label>
+            <input
+              class="player-name-input"
+              type="text"
+              id="playerName"
+              name="playerName"
+              required
+            />
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="play-btn">JUGAR</button>
+          </div>
+        </form>
+      </article>
+    </section>
+    <footer></footer>
+  </body>
+</html>

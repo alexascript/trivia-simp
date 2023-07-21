@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <section class="cards-container">
+      <div class="question-card" id="question-1-card">
+        <form id="question1" action="">
+          <p class="question-paragraph">1. ¿Cómo se llama la madre de Homero Simpson?</p>
+          <label class="option">
+            <br>
+            <div class="paragraph-style">
+            <input type="radio" id="questionOneA" name="questionOne" value="a" />
+            A. Dania Simpson
+          </label>
+          <br />
+          <label class="option">
+            <input type="radio" id="questionOneB" name="questionOne" value="b" />
+            B. Mona Simpson
+          </label>
+          <br />
+          <label class="option">
+            <input type="radio" id="questionOneC" name="questionOne" value="c" />
+            C. Lana Simpson
+          </label>
+          <div class="answer-btn-container">
+          <button id="answer-btn-q1" type="submit">Responder</button>
+        </div>
+          <br />
+      </form>
+    </div>
+  </div>
+        <div class="question-card" id="question-2-card" style="display: none;">
+          <form id="question2">
+          <p class="question-paragraph"> 2. ¿Cuál es la dirección en la que viven los Simpsons?</p>
+          <label>
+            <br>
+            <div class="paragraph-style">
+            <input type="radio" id="questionTwoA" name="questionTwo" value="a" />
+            Avenida Siempre Viva 142
+          </label>
+          <br />
+          <label>
+            <input type="radio" id="questionTwoB" name="questionTwo" value="b" />
+            Calle Terraza Fiesta 224
+          </label>
+          <br />
+          <label>
+            <input type="radio" id="questionTwoC" name="questionTwo" value="c" />
+            Springfield Av. 163
+          </label>
+          <div class="answer-btn-container">
+          <button id="answer-btn-q2" type="submit">Responder</button>
+        </div>
+        </div>
+        </form>
+        </div>
+        
+    </section>
+  </body>
+</html>
