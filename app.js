@@ -96,6 +96,14 @@ function handleQuestion5Submit(event) {
   }
 }
 
+// Obtener el parámetro "nombre" de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const nombre = urlParams.get("playerName");
+
+// Mostrar el saludo en la página
+const messageDiv = document.getElementById("player-name-hello");
+messageDiv.innerText = ` Hola, ${nombre}.`;
+
 // Agregar event listeners a los formularios
 document
   .getElementById("question1")
