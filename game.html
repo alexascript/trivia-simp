@@ -4,66 +4,230 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <section class="cards-container">
       <div class="question-card" id="question-1-card">
         <form id="question1" action="">
-          <p class="question-paragraph">1. ¿Cómo se llama la madre de Homero Simpson?</p>
-          <label class="option">
-            <br>
-            <div class="paragraph-style">
-            <input type="radio" id="questionOneA" name="questionOne" value="a" />
-            A. Dania Simpson
-          </label>
-          <br />
-          <label class="option">
-            <input type="radio" id="questionOneB" name="questionOne" value="b" />
-            B. Mona Simpson
-          </label>
-          <br />
-          <label class="option">
-            <input type="radio" id="questionOneC" name="questionOne" value="c" />
-            C. Lana Simpson
-          </label>
-          <div class="answer-btn-container">
-          <button id="answer-btn-q1" type="submit">Responder</button>
-        </div>
-          <br />
-      </form>
-    </div>
-  </div>
-        <div class="question-card" id="question-2-card" style="display: none;">
-          <form id="question2">
-          <p class="question-paragraph"> 2. ¿Cuál es la dirección en la que viven los Simpsons?</p>
-          <label>
-            <br>
-            <div class="paragraph-style">
-            <input type="radio" id="questionTwoA" name="questionTwo" value="a" />
-            Avenida Siempre Viva 142
-          </label>
-          <br />
-          <label>
-            <input type="radio" id="questionTwoB" name="questionTwo" value="b" />
-            Calle Terraza Fiesta 224
-          </label>
-          <br />
-          <label>
-            <input type="radio" id="questionTwoC" name="questionTwo" value="c" />
-            Springfield Av. 163
-          </label>
-          <div class="answer-btn-container">
-          <button id="answer-btn-q2" type="submit">Responder</button>
-        </div>
-        </div>
+          <p class="question-paragraph">
+            ¿Cómo se llama la madre de Homero Simpson?
+          </p>
+          <div class="paragraph-style">
+            <label class="option">
+              <br />
+              <input
+                type="radio"
+                id="questionOneA"
+                name="questionOne"
+                value="a"
+              />
+              Dania Simpson
+            </label>
+            <br />
+            <label class="option">
+              <input
+                type="radio"
+                id="questionOneB"
+                name="questionOne"
+                value="b"
+              />
+              Mona Simpson
+            </label>
+            <br />
+            <label class="option">
+              <input
+                type="radio"
+                id="questionOneC"
+                name="questionOne"
+                value="c"
+              />
+              Lana Simpson
+            </label>
+            <div class="answer-btn-container">
+              <button id="answer-btn-q1" type="submit">Responder</button>
+            </div>
+            <br />
+          </div>
         </form>
-        </div>
-        
+      </div>
+      <div class="question-card" id="question-2-card" style="display: none">
+        <form id="question2">
+          <p class="question-paragraph">
+            ¿Cuál es la dirección en la que viven los Simpsons?
+          </p>
+          <div class="paragraph-style">
+            <label>
+              <br />
+              <input
+                type="radio"
+                id="questionTwoA"
+                name="questionTwo"
+                value="a"
+              />
+              Avenida Siempre Viva 142
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionTwoB"
+                name="questionTwo"
+                value="b"
+              />
+              Calle Terraza Fiesta 224
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionTwoC"
+                name="questionTwo"
+                value="c"
+              />
+              Springfield Av. 163
+            </label>
+            <div class="answer-btn-container">
+              <button id="answer-btn-q2" type="submit">Responder</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="question-card" id="question-3-card" style="display: none">
+        <form id="question3">
+          <p class="question-paragraph">
+            Completa el diálogo: "Lisa, los vampiros son seres inventados, como
+            los duendes, los gremlins y los ..."
+          </p>
+          <div class="paragraph-style">
+            <label>
+              <br />
+              <input
+                type="radio"
+                id="questionThreeA"
+                name="questionThree"
+                value="a"
+              />
+              Unicornios
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionThreeB"
+                name="questionThree"
+                value="b"
+              />
+              Esquimales
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionThreeC"
+                name="questionThree"
+                value="c"
+              />
+              Esquilax
+            </label>
+            <div class="answer-btn-container">
+              <button id="answer-btn-q3" type="submit">Responder</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="question-card" id="question-4-card" style="display: none">
+        <form id="question4">
+          <p class="question-paragraph">
+            Completa el diálogo: "Tendrá todo el dinero del mundo, pero hay algo
+            que jamás podrá comprar: ..."
+          </p>
+          <div class="paragraph-style">
+            <label>
+              <br />
+              <input
+                type="radio"
+                id="questionFourA"
+                name="questionFour"
+                value="a"
+              />
+              La felicidad
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionFourB"
+                name="questionFour"
+                value="b"
+              />
+              Un dinosaurio
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionFourC"
+                name="questionFour"
+                value="c"
+              />
+              Un unicornio
+            </label>
+            <div class="answer-btn-container">
+              <button id="answer-btn-q4" type="submit">Responder</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="question-card" id="question-5-card" style="display: none">
+        <form id="question5">
+          <p class="question-paragraph">
+            ¿cómo se llama el gato de los Simpson?
+          </p>
+          <div class="paragraph-style">
+            <label>
+              <br />
+              <input
+                type="radio"
+                id="questionFiveA"
+                name="questionFive"
+                value="a"
+              />
+              Ayudante de Santa
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionFiveB"
+                name="questionFive"
+                value="b"
+              />
+              Monty
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                id="questionFiveC"
+                name="questionFive"
+                value="c"
+              />
+              Bola de Nieve
+            </label>
+            <div class="answer-btn-container">
+              <button id="answer-btn-q5" type="submit">Responder</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
   </body>
 </html>
