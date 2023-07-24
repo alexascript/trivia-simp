@@ -1,3 +1,8 @@
+//Variables para llevar el registro del puntaje y el resultado general
+
+let score = 0;
+let totalQuestions = 5;
+
 // Función para manejar el evento submit del PRIMER formulario
 function handleQuestion1Submit(event) {
   event.preventDefault();
@@ -10,11 +15,16 @@ function handleQuestion1Submit(event) {
   // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
+    score++;
     document.getElementById("question-1-card").style.display = "none";
     document.getElementById("question-2-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+    alert("Respuesta incorrecta");
+    document.getElementById("question-1-card").style.display = "none";
+    document.getElementById("question-2-card").style.display = "block";
   }
+
+  printScore();
 }
 
 // Función para manejar el evento submit del SEGUNDO formulario
@@ -29,11 +39,15 @@ function handleQuestion2Submit(event) {
   // Verificar si es la respuesta correcta (valor "a" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "a") {
     alert("¡Respuesta correcta!");
+    score++;
     document.getElementById("question-2-card").style.display = "none";
     document.getElementById("question-3-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+    alert("Respuesta incorrecta.");
+    document.getElementById("question-2-card").style.display = "none";
+    document.getElementById("question-3-card").style.display = "block";
   }
+  printScore();
 }
 
 // Función para manejar el evento submit del TERCER formulario
@@ -49,11 +63,15 @@ function handleQuestion3Submit(event) {
   // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
+    score++;
     document.getElementById("question-3-card").style.display = "none";
     document.getElementById("question-4-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+    alert("Respuesta incorrecta.");
+    document.getElementById("question-3-card").style.display = "none";
+    document.getElementById("question-4-card").style.display = "block";
   }
+  printScore();
 }
 
 // Función para manejar el evento submit del CUARTO formulario
@@ -69,11 +87,15 @@ function handleQuestion4Submit(event) {
   // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
+    score++;
     document.getElementById("question-4-card").style.display = "none";
     document.getElementById("question-5-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+    alert("Respuesta incorrecta.");
+    document.getElementById("question-4-card").style.display = "none";
+    document.getElementById("question-5-card").style.display = "block";
   }
+  printScore();
 }
 
 // Función para manejar el evento submit del QUINTO formulario
@@ -89,11 +111,21 @@ function handleQuestion5Submit(event) {
   // Verificar si es la respuesta correcta (valor "c" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "c") {
     alert("¡Respuesta correcta!");
+    score++;
     document.getElementById("question-5-card").style.display = "none";
-    document.getElementById("question-1-card").style.display = "block"; // debo volver a la pantalla de inicio, corregir
   } else {
-    alert("Respuesta incorrecta. Inténtalo de nuevo.");
+    alert("Respuesta incorrecta.");
+    document.getElementById("question-5-card").style.display = "none";
   }
+  printScore();
+  document.getElementById("result-container").style.display = "block";
+}
+
+// Mostrar el resultado general
+function printScore() {
+  document.getElementById(
+    "score"
+  ).textContent = `Puntaje: ${score} de ${totalQuestions}`;
 }
 
 // Obtener el parámetro "nombre" de la URL

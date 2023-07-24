@@ -134,3 +134,38 @@ html {
 .answer-btn-questions:hover {
   background-color: #0d7ebf;
 }
+
+#lisa-picture {
+  width: 400px;
+  border-radius: 50px;
+}
+
+#score {
+  font-family: "simpsonsFont", sans-serif;
+  color: #f15f31;
+  position: relative;
+  left: 140px;
+}
+
+#score-title {
+  font-family: "simpsonsFont", sans-serif;
+  position: relative;
+  left: 140px;
+}
+
+#play-again-btn {
+  background-color: #f15f31;
+  width: 100px;
+  height: 50px;
+  font-family: "simpsonsFont", sans-serif;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 140px;
+  top: 15px;
+}
+
+#play-again-btn:hover {
+  background-color: #0d7ebf;
+}
