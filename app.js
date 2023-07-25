@@ -7,19 +7,18 @@ let totalQuestions = 5;
 function handleQuestion1Submit(event) {
   event.preventDefault();
 
-  // Obtener el valor seleccionado por el usuario
-
   const selectedValue = document.querySelector(
     'input[name="questionOne"]:checked'
   );
-  // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
+
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
     score++;
+
     document.getElementById("question-1-card").style.display = "none";
     document.getElementById("question-2-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta");
+    alert("Respuesta incorrecta. La respuesta correcta es Mona Simpson.");
     document.getElementById("question-1-card").style.display = "none";
     document.getElementById("question-2-card").style.display = "block";
   }
@@ -27,94 +26,85 @@ function handleQuestion1Submit(event) {
   printScore();
 }
 
-// Función para manejar el evento submit del SEGUNDO formulario
+// SEGUNDO formulario
 function handleQuestion2Submit(event) {
   event.preventDefault();
 
-  // Obtener el valor seleccionado por el usuario
   const selectedValue = document.querySelector(
     'input[name="questionTwo"]:checked'
   );
 
-  // Verificar si es la respuesta correcta (valor "a" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "a") {
     alert("¡Respuesta correcta!");
     score++;
     document.getElementById("question-2-card").style.display = "none";
     document.getElementById("question-3-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta.");
+    alert(
+      "Respuesta incorrecta. La respuesta correcta es Avenida Siempre Viva 142."
+    );
     document.getElementById("question-2-card").style.display = "none";
     document.getElementById("question-3-card").style.display = "block";
   }
   printScore();
 }
 
-// Función para manejar el evento submit del TERCER formulario
+//TERCER formulario
 function handleQuestion3Submit(event) {
   event.preventDefault();
-
-  // Obtener el valor seleccionado por el usuario
 
   const selectedValue = document.querySelector(
     'input[name="questionThree"]:checked'
   );
 
-  // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
     score++;
     document.getElementById("question-3-card").style.display = "none";
     document.getElementById("question-4-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta.");
+    alert("Respuesta incorrecta. La respuesta correcta es Esquimales.");
     document.getElementById("question-3-card").style.display = "none";
     document.getElementById("question-4-card").style.display = "block";
   }
   printScore();
 }
 
-// Función para manejar el evento submit del CUARTO formulario
+//CUARTO formulario
 function handleQuestion4Submit(event) {
   event.preventDefault();
-
-  // Obtener el valor seleccionado por el usuario
 
   const selectedValue = document.querySelector(
     'input[name="questionFour"]:checked'
   );
 
-  // Verificar si es la respuesta correcta (valor "b" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "b") {
     alert("¡Respuesta correcta!");
     score++;
     document.getElementById("question-4-card").style.display = "none";
     document.getElementById("question-5-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta.");
+    alert("Respuesta incorrecta. La respuesta correcta es un dinosaurio.");
     document.getElementById("question-4-card").style.display = "none";
     document.getElementById("question-5-card").style.display = "block";
   }
   printScore();
 }
 
-// Función para manejar el evento submit del QUINTO formulario
+// QUINTO formulario
 function handleQuestion5Submit(event) {
   event.preventDefault();
-
-  // Obtener el valor seleccionado por el usuario
 
   const selectedValue = document.querySelector(
     'input[name="questionFive"]:checked'
   );
 
-  // Verificar si es la respuesta correcta (valor "c" para la respuesta correcta)
   if (selectedValue && selectedValue.value === "c") {
     alert("¡Respuesta correcta!");
     score++;
     document.getElementById("question-5-card").style.display = "none";
   } else {
-    alert("Respuesta incorrecta.");
+    alert("Respuesta incorrecta. La respuesta correcta es Bola de Nieve.");
     document.getElementById("question-5-card").style.display = "none";
   }
   printScore();
