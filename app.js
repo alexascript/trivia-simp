@@ -1,148 +1,103 @@
-//Variables para llevar el registro del puntaje y el resultado general
+//Vars to register score and general result
 
 let score = 0;
 let totalQuestions = 5;
+let currentQuestion = 1;
 
-// Función para manejar el evento submit del PRIMER formulario
-function handleQuestion1Submit(event) {
+//Functions to handle submit form submission
+function handleQuestionSubmit(
+  event,
+  correctAnswer,
+  correctMessage,
+  incorrectMessage
+) {
   event.preventDefault();
 
-  const selectedValue = document.querySelector(
-    'input[name="questionOne"]:checked'
-  );
+  const checkedRadioButtonQuery = `input[name="question${currentQuestion}"]:checked`;
+  const selectedValue = document.querySelector(checkedRadioButtonQuery);
 
-  if (selectedValue && selectedValue.value === "b") {
+  if (selectedValue && selectedValue.value === correctAnswer) {
     alert("¡Respuesta correcta!");
     score++;
-
-    document.getElementById("question-1-card").style.display = "none";
-    document.getElementById("question-2-card").style.display = "block";
   } else {
-    alert("Respuesta incorrecta. La respuesta correcta es Mona Simpson.");
-    document.getElementById("question-1-card").style.display = "none";
-    document.getElementById("question-2-card").style.display = "block";
+    alert(incorrectMessage);
+  }
+
+  document.getElementById(`question-${currentQuestion}-card`).style.display =
+    "none";
+
+  if (currentQuestion < totalQuestions) {
+    currentQuestion++;
+    document.getElementById(`question-${currentQuestion}-card`).style.display =
+      "block";
+  } else {
+    document.getElementById("result-container").style.display = "block";
+    document.getElementById(
+      "score"
+    ).textContent = `Puntaje: ${score} de ${totalQuestions}`;
   }
 
   printScore();
 }
 
-// SEGUNDO formulario
-function handleQuestion2Submit(event) {
-  event.preventDefault();
-
-  const selectedValue = document.querySelector(
-    'input[name="questionTwo"]:checked'
-  );
-
-  if (selectedValue && selectedValue.value === "a") {
-    alert("¡Respuesta correcta!");
-    score++;
-    document.getElementById("question-2-card").style.display = "none";
-    document.getElementById("question-3-card").style.display = "block";
-  } else {
-    alert(
-      "Respuesta incorrecta. La respuesta correcta es Avenida Siempre Viva 142."
-    );
-    document.getElementById("question-2-card").style.display = "none";
-    document.getElementById("question-3-card").style.display = "block";
-  }
-  printScore();
-}
-
-//TERCER formulario
-function handleQuestion3Submit(event) {
-  event.preventDefault();
-
-  const selectedValue = document.querySelector(
-    'input[name="questionThree"]:checked'
-  );
-
-  if (selectedValue && selectedValue.value === "b") {
-    alert("¡Respuesta correcta!");
-    score++;
-    document.getElementById("question-3-card").style.display = "none";
-    document.getElementById("question-4-card").style.display = "block";
-  } else {
-    alert("Respuesta incorrecta. La respuesta correcta es Esquimales.");
-    document.getElementById("question-3-card").style.display = "none";
-    document.getElementById("question-4-card").style.display = "block";
-  }
-  printScore();
-}
-
-//CUARTO formulario
-function handleQuestion4Submit(event) {
-  event.preventDefault();
-
-  const selectedValue = document.querySelector(
-    'input[name="questionFour"]:checked'
-  );
-
-  if (selectedValue && selectedValue.value === "b") {
-    alert("¡Respuesta correcta!");
-    score++;
-    document.getElementById("question-4-card").style.display = "none";
-    document.getElementById("question-5-card").style.display = "block";
-  } else {
-    alert("Respuesta incorrecta. La respuesta correcta es un dinosaurio.");
-    document.getElementById("question-4-card").style.display = "none";
-    document.getElementById("question-5-card").style.display = "block";
-  }
-  printScore();
-}
-
-// QUINTO formulario
-function handleQuestion5Submit(event) {
-  event.preventDefault();
-
-  const selectedValue = document.querySelector(
-    'input[name="questionFive"]:checked'
-  );
-
-  if (selectedValue && selectedValue.value === "c") {
-    alert("¡Respuesta correcta!");
-    score++;
-    document.getElementById("question-5-card").style.display = "none";
-  } else {
-    alert("Respuesta incorrecta. La respuesta correcta es Bola de Nieve.");
-    document.getElementById("question-5-card").style.display = "none";
-  }
-  printScore();
-  document.getElementById("result-container").style.display = "block";
-}
-
-// Mostrar el resultado general
+// Show general result
 function printScore() {
   document.getElementById(
     "score"
   ).textContent = `Puntaje: ${score} de ${totalQuestions}`;
 }
 
-// Obtener el parámetro "nombre" de la URL
+// Get param "name" from URL
 const urlParams = new URLSearchParams(window.location.search);
 const nombre = urlParams.get("playerName");
 
-// Mostrar el saludo en la página
+// Show greeting in the website
 const messageDiv = document.getElementById("player-name-hello");
 messageDiv.innerText = ` Hola, ${nombre}.`;
 
-// Agregar event listeners a los formularios
-document
-  .getElementById("question1")
-  .addEventListener("submit", handleQuestion1Submit);
+// Add event listeners to the forms
 
-document
-  .getElementById("question2")
-  .addEventListener("submit", handleQuestion2Submit);
+for (let i = 1; i <= totalQuestions; i++) {
+  const form = document.getElementById(`question${i}`);
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let correctAnswer, correctMessage, incorrectMessage;
 
-document
-  .getElementById("question3")
-  .addEventListener("submit", handleQuestion3Submit);
+    if (i === 1) {
+      correctAnswer = "b";
+      correctMessage = "Bien hecho!";
+      incorrectMessage =
+        "Respuesta incorrecta. La respuesta correcta es Mona Simpson.";
+    } else if (i === 2) {
+      correctAnswer = "a";
+      correctMessage = "Respuesta correcta.";
 
-document
-  .getElementById("question4")
-  .addEventListener("submit", handleQuestion4Submit);
+      incorrectMessage =
+        "Respuesta incorrecta. La respuesta correcta es Avenida Siempre Viva 142.";
+    } else if (i === 3) {
+      correctAnswer = "b";
+      correctMessage = "De pelos.";
+      incorrectMessage =
+        "Respuesta incorrecta. La respuesta correcta es Esquimales.";
+    } else if (i === 4) {
+      correctAnswer = "b";
+      correctMessage = "Respuesta correcta.";
 
-document
-  .getElementById("question5")
-  .addEventListener("submit", handleQuestion5Submit);
+      incorrectMessage =
+        "Respuesta incorrecta. La respuesta correcta es un dinosaurio.";
+    } else if (i === 5) {
+      correctAnswer = "c";
+      correctMessage = "Correcto";
+
+      incorrectMessage =
+        "Respuesta incorrecta. La respuesta correcta es Bola de Nieve.";
+    }
+
+    handleQuestionSubmit(
+      event,
+      correctAnswer,
+      correctMessage,
+      incorrectMessage
+    );
+  });
+}
