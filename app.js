@@ -13,9 +13,8 @@ function handleQuestionSubmit(
 ) {
   event.preventDefault();
 
-  const selectedValue = document.querySelector(
-    `input[name="question${currentQuestion}"]:checked`
-  );
+  const checkedRadioButtonQuery = `input[name="question${currentQuestion}"]:checked`;
+  const selectedValue = document.querySelector(checkedRadioButtonQuery);
 
   if (selectedValue && selectedValue.value === correctAnswer) {
     alert("¡Respuesta correcta!");
