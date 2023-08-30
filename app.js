@@ -94,8 +94,6 @@ for (let i = 1; i <= totalQuestions; i++) {
         "Respuesta incorrecta. La respuesta correcta es Bola de Nieve.";
     }
 
-    console.log("click", correctAnswer, correctMessage, incorrectMessage);
-
     handleQuestionSubmit(
       event,
       correctAnswer,
