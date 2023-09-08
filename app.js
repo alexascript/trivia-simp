@@ -16,12 +16,20 @@ function handleQuestionSubmit(
   const checkedRadioButtonQuery = `input[name="question${currentQuestion}"]:checked`;
   const selectedValue = document.querySelector(checkedRadioButtonQuery);
 
+  const feedbackText = document.getElementById("feedbackText");
+
   if (selectedValue && selectedValue.value === correctAnswer) {
-    alert("¡Respuesta correcta!");
+    feedbackText.textContent = correctMessage;
     score++;
   } else {
-    alert(incorrectMessage);
+    feedbackText.textContent = incorrectMessage;
   }
+
+  // Show the feedback modal
+  openFeedbackModal();
+
+  document.getElementById(`question-${currentQuestion}-card`).style.display =
+    "none";
 
   document.getElementById(`question-${currentQuestion}-card`).style.display =
     "none";
@@ -39,6 +47,18 @@ function handleQuestionSubmit(
 
   printScore();
 }
+
+// Function to open the feedback modal
+function openFeedbackModal() {
+  let modal = document.getElementById("feedbackModal");
+  modal.style.display = "block";
+}
+
+// Function to close the feedback modal
+document.getElementById("closeModal").addEventListener("click", function () {
+  let modal = document.getElementById("feedbackModal");
+  modal.style.display = "none";
+});
 
 // Show general result
 function printScore() {
